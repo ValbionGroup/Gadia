@@ -18,6 +18,20 @@
 Le développement de Gadia **n'a pas encore commencé**, pour le moment je suis occupé sur d'autres choses et je ne sais pas encore comment faire pour que l'infrastructure tienne. 
 Que ce soit la base de donnée ou le moteur utilisé pour process le site.
 
-C'est pourquoi votre aide **est la bienvenue**, si vous avez une quelconque idée, n'hésitez pas à proposer en ouvrant une *issue* ou une *discussion*.
+C'est pourquoi votre aide **est la bienvenue**, si vous avez une quelconque idée, n'hésitez pas à proposer en ouvrant une *issue* ou une *discussion* ou en rejoignant le [*discord du projet*](http://discord.gadia.valbion.com/).
 
 Pour le moment je vais m'atteler à l'interface de Gadia, imaginer à quoi cela pourrait resembler pour pouvoir proposer une maquette. Quand celle-ci sera disponible vous pourrez la consulter sur cette page.
+
+### Interface
+
+> **Ce n'est qu'un projet !** Ces images ne sont pas représentative de la version finale, mais seulement de ma vision du projet
+
+**La page d'accueil**, ici les informations importantes à voir d'un coup d'oeil
+![Accueil Dark](https://upload.valbion.com/img/gadia/screens/v1/dashboard_dark.png)
+![Accueil White](https://upload.valbion.com/img/gadia/screens/v1/dashboard_white.png)
+
+**Les informations de la vie scolaire**, pas besoin d'en expliquer plus. Le screen ne contient pas la barre supérieure et latérale mais elle est bien présente en réalité ^^
+![Vie Scolaire Dark](https://upload.valbion.com/img/gadia/screens/v1/viesco_dark.png)
+![Vie Scolaire White](https://upload.valbion.com/img/gadia/screens/v1/viesco_white.png)
+
+Si vous avez de quelconques remarques, n'hésitez pas à me contacter !
