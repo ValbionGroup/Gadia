@@ -10,17 +10,17 @@
                             clip-rule="evenodd"></path>
                     </svg>
                     <span>Modification EDT ‒ <span class="font-medium">Votre cours <?php if ($modif['day'] == 0) {
-    echo "d'aujourd'hui";
-} elseif ($modif['day'] == 1) {
-    echo "de demain";
-} else {
-    echo "";
-} ?> de <i>{{ $modif['matiere'] }}</i> avec
-                            <i>{{ $modif['prof'] }}</i> a été <?php if ($modif['type'] == 0) {
-    echo 'modifié';
-} else {
-    echo 'annulé';
-} ?>.</span></span>
+                            echo "d'aujourd'hui";
+                        } elseif ($modif['day'] == 1) {
+                            echo "de demain";
+                        } else {
+                            echo "";
+                        } ?> de <i>{{ $modif['matiere'] }}</i> avec
+                                                    <i>{{ $modif['prof'] }}</i> a été <?php if ($modif['type'] == 0) {
+                            echo 'modifié';
+                        } else {
+                            echo 'annulé';
+                        } ?>.</span></span>
                 </div>
             </a>
         @endforeach
@@ -29,7 +29,7 @@
     @if ($cta_votes != null)
         @foreach ($cta_votes as $vote_item)
             <a class="flex items-center justify-between p-4 mb-2 text-sm font-semibold dark:text-teal-100 dark:bg-teal-600 text-teal-600 bg-teal-100 rounded-lg shadow-md focus:outline-none focus:shadow-outline-gray"
-                href="{{ route('e-sondage') }}">
+                href="">
                 <div class="flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"

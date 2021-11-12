@@ -23,8 +23,8 @@ class AuthenticatedSessionController extends Controller
             $cas_url = null;
         } else {
             $cas = true;
-            $cas_name = 'Lycée Connecté'; // DB::table('cas_settings')->where('id', '1')->value('name');
-            $cas_url = 'https://mon.lyceeconnecte.fr/cas/login?service=https:%2F%2F0400017B.gadia.io%2F'; // DB::table('cas_settings')->where('id', '1')->value('auth_link');
+            $cas_name = DB::table('cas_settings')->where('id', '1')->value('name');
+            $cas_url = DB::table('cas_settings')->where('id', '1')->value('auth_link');
         }
         return view('auth.login', ['cas' => $cas, 'cas_url' => $cas_url, 'cas_name' => $cas_name]);
     }

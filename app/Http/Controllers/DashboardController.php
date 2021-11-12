@@ -16,15 +16,15 @@ class DashboardController extends Controller
 
         $edt = $edt_control->getTempsForOneDay($request->user()->login);
         $edtweek = $edt_control->getWeekName(date('W'));
-        $moyenne = "16";
+        $moyenne = null;
         $cdt = null;
         $marks = null;
-        $tests = "6";
-        $period = "Trimestre 1";
-        $cta_info = ['0' => ['name' => 'Essai information', 'id' => '65125']];
-        $cta_vs = "Essai vie scolaire";
-        $cta_poll = ['0' => ['name' => 'Essai sondage', 'id' => '21645']];
-        $cta_vote = ['0' => ['name' => 'Essai vote', 'id' => '816']];
+        $tests = null;
+        $period = null;
+        $cta_info = null;
+        $cta_vs = null;
+        $cta_poll = null;
+        $cta_vote = null;
         $cta_edt = $edt_control->getModifiedCourses($request->user()->login);
 
         if ($moyenne == null) {
