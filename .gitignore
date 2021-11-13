@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/public/assets/css/tailwind.output.css
 .env
 .env.backup
 .phpunit.result.cache
