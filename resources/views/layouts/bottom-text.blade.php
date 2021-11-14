@@ -2,5 +2,5 @@
     <p class="text-center text-sm items-center">© 2021 <a
             href="https://valbion.com/?pk_source=Gadia&20Instance">Valbion</a> (<a
             href="https://gadia.valbion.com/?pk_source=Gadia&20Instance">Gadia</a>)</p>
-    <p class="text-center text-sm items-center">Ver. 0.0.1</p>
+    <p class="text-center text-sm items-center">Ver. {{ $version->version }}</p>
 </div>

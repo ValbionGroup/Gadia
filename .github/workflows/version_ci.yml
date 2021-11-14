@@ -1,0 +1,23 @@
+name: Set ./VERSION when release created
+
+on:
+  release:
+    types:
+      - created
+
+  workflow_dispatch:
+
+jobs:
+  setVer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set ./VERSION file
+        run: |
+          echo "" >> VERSION
+          echo "${{ github.ref_name }}" >> VERSION
+          echo "sha:${{ github.sha }}" >> VERSION
+          echo "build:${{ github.run_id }}" >> VERSION
+          date +"%Y%m%d%k%M%S%z" >> VERSION
