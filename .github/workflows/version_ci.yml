@@ -1,4 +1,4 @@
-name: Set ./VERSION when release created
+name: Fill Version infos
 
 on:
   release:
