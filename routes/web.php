@@ -62,16 +62,18 @@ Route::middleware('auth', '2fa')->group(function () {
             Route::get('/stage', function () {
                 return view('eleve.stage', ['page_name' => 'Stage']);
             })->name('e-stage');
-            Route::get('/message', function () {
+            Route::get('/messages', function () {
                 return view('eleve.message', ['page_name' => 'Messagerie']);
             })->name('e-msg');
-            Route::get('/message/information', function () {
+            Route::get('/messages/information', function () {
                 return view('eleve.information', ['page_name' => 'Messagerie - Information']);
             })->name('e-info');
-            Route::get('/message/sondage', function () {
+            Route::get('/messages/sondage', function () {
                 return view('eleve.sondage', ['page_name' => 'Messagerie - Sondage']);
             })->name('e-sondage');
-            Route::get('/friend', [FriendshipController::class, 'index'])->name('friends.show');
+            Route::get('/friends', [FriendshipController::class, 'index'])->name('e-friends');
+            Route::get('/friend/{id}', [FriendshipController::class, 'view'])->name('e-friendView');
+            Route::post('/friend/delete/{id}', [FriendshipController::class, 'delete'])->name('e-friendDelete');
         });
     });
 
