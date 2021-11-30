@@ -21,6 +21,7 @@ class AuthenticatedSessionController extends Controller
         if (DB::table('settings')->where('NAME', 'cas')->value('VALUE') == 'false') {
             $cas = false;
             $cas_url = null;
+            $cas_name = null;
         } else {
             $cas = true;
             $cas_name = DB::table('cas_settings')->where('id', '1')->value('name');

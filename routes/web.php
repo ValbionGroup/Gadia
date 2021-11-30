@@ -7,6 +7,7 @@ use App\Http\Controllers\FriendshipController;
 use App\Http\Controllers\EleveVsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Prof\AppelController;
+use App\Http\Controllers\Direction\DashboardController as DirectionDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,9 +121,7 @@ Route::middleware('auth', '2fa')->group(function () {
             return redirect('/direction');
         });
         Route::prefix('direction')->group(function () {
-            Route::get('/', function () {
-                return view('direction.dashboard', ['page_name' => 'Tableau de bord', 'spaceType' => 'Direction', 'situation' => '0']);
-            })->name('d-dashboard');
+            Route::get('/', [DirectionDashboardController::class, 'show'])->name('d-dashboard');
             require __DIR__.'/settings.php';
         });
     });
