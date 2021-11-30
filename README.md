@@ -9,9 +9,8 @@
   <img src="https://img.shields.io/github/issues/ValbionGroup/Gadia?style=flat-square" alt="Issue">
   <img src="https://img.shields.io/github/stars/ValbionGroup/Gadia?color=dark%20green&style=flat-square" alt="Stars">
   <img src="https://img.shields.io/github/sponsors/ValbionGroup?style=flat-square" alt="Sponsors">
+  <img src="https://img.shields.io/codefactor/grade/github/ValbionGroup/Gadia/master?style=flat-square" alt="Code quality">
 </p>
-
-![Build Status](https://img.shields.io/appveyor/build/ValbionGroup/Gadia?style=flat-square) ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/ValbionGroup/Gadia/master?style=flat-square)  ![Dependencies status](https://img.shields.io/david/ValbionGroup/Gadia?style=flat-square) 
 
 ---
 ## Informations
