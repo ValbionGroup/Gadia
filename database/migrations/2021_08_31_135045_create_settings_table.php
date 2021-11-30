@@ -28,6 +28,7 @@ class CreateSettingsTable extends Migration
             ['NAME' => 'adressState', 'VALUE' =>null],
             ['NAME' => 'adressDept', 'VALUE' =>null],
             ['NAME' => 'adressStreet', 'VALUE' =>null],
+            ['NAME' => 'academie', 'VALUE' => null],
             ['NAME' => 'codeUai', 'VALUE' =>null],
             ['NAME' => 'licenseKey', 'VALUE' =>null],
             ['NAME' => 'version', 'VALUE' =>null],

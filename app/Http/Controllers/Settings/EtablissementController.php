@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Settings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use phpDocumentor\Reflection\Types\Boolean;
-use PhpParser\Node\Expr\BinaryOp\Equal;
 
-class GlobalController extends Controller
+class EtablissementController extends Controller
 {
     public function show()
     {
@@ -25,7 +23,7 @@ class GlobalController extends Controller
 
         $licenseState = $this->verifyKey($license);
 
-        return view('direction.settings.global', [
+        return view('direction.settings.etab.etablissement', [
             'page_name' => 'Paramètres globaux',
             'schoolname' => $schoolname,
             'schooltype' => $schooltype,
