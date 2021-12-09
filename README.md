@@ -15,12 +15,9 @@
 ---
 ## Informations
 
-Le développement de Gadia **n'a pas encore commencé**, pour le moment je suis occupé sur d'autres choses et je ne sais pas encore comment faire pour que l'infrastructure tienne. 
-Que ce soit la base de donnée ou le moteur utilisé pour process le site.
+Gadia est un logiciel de gestion de la vie scolaire en développement. Gadia **n'est pas une interface alternative à *Pronote* ou *Ecole Directe***, Gadia est un logiciel à part entière.
 
-C'est pourquoi votre aide **est la bienvenue**, si vous avez une quelconque idée, n'hésitez pas à proposer en ouvrant une *issue* ou une *discussion* ou en rejoignant le [*discord du projet*](http://discord.gadia.valbion.com/).
-
-Pour le moment je vais m'atteler à l'interface de Gadia, imaginer à quoi cela pourrait resembler pour pouvoir proposer une maquette. Quand celle-ci sera disponible vous pourrez la consulter sur cette page.
+Votre aide **est la bienvenue**, si vous avez une quelconque idée, n'hésitez pas à proposer en ouvrant une *issue* ou une *discussion* ou en rejoignant le [*discord du projet*](http://discord.gadia.valbion.com/).
 
 ### Fonctionnalités
 
@@ -58,4 +55,18 @@ Si vous avez de quelconques remarques, n'hésitez pas à me contacter !
 
 ### Informations techniques
 
-Ayant débuté le développement, j'utilise Laravel pour créer cette application
+Gadia fonctionne avec Tailwind CSS pour l'interface et Laravel en tant que framework. Les fichiers du site sont donc des fichiers blade (`fichier.blade.php`), le reste en PHP (`fichier.php`).
+
+#### Contribuer
+
+Pour contribuer au projet veuillez suivres les étapes dessous...
+
+1. Cloner le répo'
+2. Modifier le fichier `.env.example` puis renomer-le en `.env`
+3. Ensuite faites les commandes ci-dessous :
+```
+composer intall
+npm install
+php artisan migrate
+php artisan serve
+```
