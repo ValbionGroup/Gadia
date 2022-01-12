@@ -14,9 +14,15 @@ class CreateAbsenceMotifsTable extends Migration
     public function up()
     {
         Schema::create('absence_motifs', function (Blueprint $table) {
-            $table->id('id_motif_absence');
-            $table->char('init_motif_absence', 2);
-            $table->string('def_motif_absence', 255);
+            $table->id('id');
+            $table->char('code', 2);
+            $table->string('definition', 255);
+            $table->integer('jusitfy');
+            $table->integer('re_admin');
+            $table->integer('out');
+            $table->integer('health');
+            $table->integer('buletin');
+            $table->integer('published');
         });
     }
 
