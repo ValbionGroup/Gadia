@@ -12,7 +12,7 @@ class DashboardLinksController extends Controller
     {
         $db = DB::table('links');
 
-        if (!isEmpty($db)) {
+        if (isEmpty($db)) {
             return false;
         } else {
             return true;
