@@ -1,27 +1,27 @@
-@if ($absence_count != 0)
-@foreach ($absences as $absence)
+@if ($retard_count != 0)
+@foreach ($retards as $retard)
 <tr class="text-gray-700 dark:text-gray-400">
     <td class="px-4 py-3">
         <div class="flex items-center text-sm">
             <div>
-                <p class="font-semibold">{{ $absence["date"] }}</p>
+                <p class="font-semibold">{{ $retard["date"] }}</p>
             </div>
         </div>
     </td>
     <td class="px-4 py-3 text-sm">
-        {{ $absence["missed"] }}
+        {{ $retard["missed"] }}
     </td>
     <td class="px-4 py-3 text-sm">
-        {{ $absence["reason"]["text"] }}
-        @if ($absence["reason"]["acceptable"] == false)
-            <span
-                class="px-2 py-1 text-xs font-medium leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700 tooltip"
-                data-title="Cette entrée n'est visible que par l'infirmière et la vie scolaire. Elle n'apparait donc pas sur l'espace parent."
-                data-placement="right">
-                Non recevable
-            </span>
+        {{ $retard["reason"]["text"] }}
+        @if ($retard["reason"]["acceptable"] == false)
+        <span
+            class="px-2 py-1 text-xs font-medium leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700 tooltip"
+            data-title="Cette entrée n'est visible que par l'infirmière et la vie scolaire. Elle n'apparait donc pas sur l'espace parent."
+            data-placement="right">
+            Non recevable
+        </span>
         @endif
-        @if ($absence["reason"]["hide"] == true)
+        @if ($retard["reason"]["hide"] == true)
             <span
                 class="px-2 py-1 text-xs font-medium leading-tight text-gray-700 bg-gray-100 rounded-full dark:text-gray-100 dark:bg-gray-700 tooltip"
                 data-title="Cette entrée n'est visible que par l'infirmière et la vie scolaire. Elle n'apparait donc pas sur l'espace parent."
@@ -31,7 +31,7 @@
         @endif
     </td>
     <td class="px-4 py-3 text-sm">
-        @if ($absence["justified"] == 0)
+        @if ($retard["justified"] == 0)
             <span
                 class="px-2 py-1 font-medium leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
                 Non justifiée
@@ -44,7 +44,7 @@
         @endif
     </td>
     <td>
-        @if ($absence["ra"] == 1)
+        @if ($retard["ra"] == 1)
             <span class="text-blue-500 dark:text-blue-600 tooltip" data-title="Réglé administrativement"
                 data-placement="top">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@
 @else
 <tr class="text-gray-700 dark:text-gray-400">
     <td class="px-4 py-3 text-center" colspan="5">
-        Aucune absence n'a été enregistrée. Continue comme ça 👍
+        Aucun retard n'a été enregistré. Continue comme ça 👍
     </td>
 </tr>
 @endif

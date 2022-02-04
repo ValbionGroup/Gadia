@@ -110,7 +110,7 @@
                         <div
                             class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                             <span class="flex items-center col-span-3">
-                                Montre 1-5 de 3
+                                Montre 1-5 de {{ $absence_count }}
                             </span>
                             <span class="col-span-2"></span>
                             <!-- Pagination -->
@@ -170,22 +170,14 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            Aucun retard n'a été enregistré. Continue comme ça 👍
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    @include('eleve.modules.viescolaire.table.retard')
                                 </tbody>
                             </table>
                         </div>
                         <div
                             class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                             <span class="flex items-center col-span-3">
-                                Montre 1-5 de 0
+                                Montre 1-5 de {{ $retard_count }}
                             </span>
                             <span class="col-span-2"></span>
                             <!-- Pagination -->
@@ -238,22 +230,15 @@
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3" style="width: 1px; white-space: nowrap;">Date</th>
-                                        <th class="px-4 py-3" style="width: 1px; white-space: nowrap;">Durée</th>
                                         <th class="px-4 py-3" style="white-space: nowrap;">Motif</th>
-                                        <th class="px-4 py-3" style="width: 1px; white-space: nowrap;">Etat</th>
+                                        <th class="px-4 py-3" style="width: 1px; white-space: nowrap;"></th>
+                                        <th class="px-4 py-3" style="width: 1px; white-space: nowrap;">Mesure</th>
+                                        <th class="px-4 py-3" style="width: 1px; white-space: nowrap;">Gravité</th>
                                         <th class="px-4 py-3" style="width: 6px;"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            Aucun incident n'a été enregistré. Continue comme ça 👍
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    @include('eleve.modules.viescolaire.table.events')
                                 </tbody>
                             </table>
                         </div>
@@ -324,68 +309,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <span
-                                                    class="px-2 py-1 font-medium text-sm leading-tight text-orange-700 bg-orange-100 rounded-full dark:bg-orange-700 dark:text-orange-100">
-                                                    Retenue</span></div>
-                                        </td>
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <div>
-                                                    <p class="font-semibold">9 mars à 15h30 - 1h</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm">Le 3 mars</td>
-                                        <td class="px-4 py-3 text-sm">Mme. LARRAT D. (Professeur)</td>
-                                        <td class="px-4 py-3 text-sm">Violence verbale</td>
-                                        <td class="px-4 py-3 text-sm">Insultes suite à une réprimande</td>
-                                        <td class="px-4 py-3 text-sm">Exercices 1 à 18 p283-284</td>
-                                    </tr>
-
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <span
-                                                    class="px-2 py-1 font-medium text-sm leading-tight text-red-700 bg-red-100 rounded-full dark:bg-red-700 dark:text-red-100">
-                                                    T.I.G.</span></div>
-                                        </td>
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <div>
-                                                    <p class="font-semibold">4 dec. 15h30 - 2h</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm">Le 4 dec.</td>
-                                        <td class="px-4 py-3 text-sm">M. DUPOUY D. (Professeur)</td>
-                                        <td class="px-4 py-3 text-sm">Dégradation</td>
-                                        <td class="px-4 py-3 text-sm">Coup de ciseaux sur sa table</td>
-                                        <td class="px-4 py-3 text-sm">Rangement des salles 100</td>
-                                    </tr>
-
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <span
-                                                    class="px-2 py-1 font-medium text-sm leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                                    Devoir</span></div>
-                                        </td>
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <div>
-                                                    <p class="font-semibold">22 oct.</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm">Le 16 oct.</td>
-                                        <td class="px-4 py-3 text-sm">Thomas (Surveillant)</td>
-                                        <td class="px-4 py-3 text-sm">Violence verbale</td>
-                                        <td class="px-4 py-3 text-sm">Insultes</td>
-                                        <td class="px-4 py-3 text-sm">Ex. 15 à 18 p145</td>
-                                    </tr>
+                                    @include('eleve.modules.viescolaire.table.punishments')
                                 </tbody>
                             </table>
                         </div>
