@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiTokenController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FriendshipController;
-use App\Http\Controllers\EleveVsController;
+use App\Http\Controllers\Eleve\VsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Prof\AppelController;
 use App\Http\Controllers\Direction\DashboardController as DirectionDashboardController;
+use App\Http\Controllers\FilesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ require __DIR__.'/auth.php';
 
 // Need login
 Route::middleware('auth', '2fa')->group(function () {
+    // Route : SYSTEME
+    Route::get('/files/getUrl/{hash}/{filename}', [FilesController::class, 'getFileUrl']);
+    Route::get('/files/{hash}/{token}/{filename}', [FilesController::class, 'accessFile']);
+
 
     // Route : COMMUNE
     // Profil et API
@@ -56,7 +61,7 @@ Route::middleware('auth', '2fa')->group(function () {
             Route::get('/notes', function () {
                 return view('eleve.grades', ['page_name' => 'Notes']);
             })->name('e-notes');
-            Route::get('/viescolaire', [EleveVsController::class, 'index'])->name('e-viesco');
+            Route::get('/viescolaire', [VsController::class, 'index'])->name('e-viesco');
             Route::get('/self', function () {
                 return view('eleve.self', ['page_name' => 'Demi-pension']);
             })->name('e-self');
@@ -123,6 +128,7 @@ Route::middleware('auth', '2fa')->group(function () {
         Route::prefix('direction')->group(function () {
             Route::get('/', [DirectionDashboardController::class, 'show'])->name('d-dashboard');
             require __DIR__.'/settings.php';
+            require __DIR__.'/direction/class.php';
         });
     });
 });
