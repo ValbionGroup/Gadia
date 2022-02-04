@@ -9,6 +9,6 @@ class DashboardController extends Controller
 {
     public function show()
     {
-        return view('direction.dashboard', ['page_name' => 'Tableau de bord', 'spaceType' => 'Direction', 'situation' => '0']);
+        return view('direction.dashboard', ['page_name' => 'Tableau de bord', 'spaceType' => 'Direction']);
     }
 }

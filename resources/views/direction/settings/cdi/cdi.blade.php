@@ -1,8 +1,8 @@
 @extends('direction.modules.layouts')
 
 @section('title')
-Gestion des options de Gadia
-<?php $page_name = "Gestion des options de Gadia" ?>
+Gestion de du CDI
+<?php $page_name = "Gestion de du CDI" ?>
 @endsection
 
 @section('content')
@@ -42,41 +42,23 @@ Gestion des options de Gadia
                 @endif
 
                 <div class="flex flex-col sm:flex-row mb-4 text-gray-600 dark:text-gray-300">
-                    <button onclick="openTab(event, 'login')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block border-b-2 text-purple-500 border-purple-500 dark:text-purple-400 dark:border-purple-400 focus:outline-none py-2 px-4">
-                        Connexion
+                    <button onclick="openTab(event, 'actes')" class="text-sm uppercase font-light flex-1 tablinks inline-block border-b-2 text-purple-500 border-purple-500 dark:text-purple-400 dark:border-purple-400 focus:outline-none py-2 px-4">
+                        Actes médicaux
                     </button>
-                    <button onclick="openTab(event, 'autorisations')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Autorisations
+                    <button onclick="openTab(event, 'issues')" class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                        Issues d'intervention
                     </button>
-                    <button onclick="openTab(event, 'auth')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Authentification
+                    <button onclick="openTab(event, 'symptomes')" class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                        Symptômes médicaux
                     </button>
-                    <button onclick="openTab(event, 'securite')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Sécurité
+                    <button onclick="openTab(event, 'type')" class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                        Type d'intervention
                     </button>
-                    <button id="fonctionnalites" onclick="openTab(event, 'fonctionnalites')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Fonctionnalités
-                    </button>
-                    <button onclick="openTab(event, 'licence')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Licence
-                    </button>
-                    <button onclick="openTab(event, 'api')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        API
-                    </button>
-                    <button onclick="openTab(event, 'modules')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
-                        Modules
+                    <button onclick="openTab(event, 'options')" class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                        Options
                     </button>
                 </div>
                 {{-- @include() --}}
-                @include('direction.settings.gadia.licence')
             </div>
             <div
                 class="flex items-center text-right justify-end px-4 py-3 bg-white dark:bg-gray-700 sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">

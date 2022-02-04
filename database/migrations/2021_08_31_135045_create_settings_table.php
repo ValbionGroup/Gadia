@@ -33,9 +33,12 @@ class CreateSettingsTable extends Migration
             ['NAME' => 'licenseKey', 'VALUE' =>null],
             ['NAME' => 'version', 'VALUE' =>null],
             ['NAME' => 'year', 'VALUE' =>null],
-            ['NAME' => 'logoEtab', 'VALUE' =>null],
+            ['NAME' => 'logoEtab', 'VALUE' => 'default.jpg'],
+            ['NAME' => 'cachet', 'VALUE' => null],
             ['NAME' => 'cas', 'VALUE' => 'false'],
-            ['NAME' => 'casBypass', 'VALUE' => 'false']
+            ['NAME' => 'casBypass', 'VALUE' => 'false'],
+            ['NAME' => 'journey', 'VALUE' => 'continue'],
+            ['NAME' => 'fullHours', 'VALUE' => '0']
         ]);
     }
 

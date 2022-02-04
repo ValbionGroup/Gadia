@@ -69,7 +69,7 @@ Gestion établissement
                         class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
                         Restauration
                     </button>
-                    <button onclick="openTab(event, 'pause')"
+                    <button onclick="openTab(event, 'pauses')"
                         class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
                         Récréations
                     </button>
@@ -88,6 +88,15 @@ Gestion établissement
                 </div>
                 @include('direction.settings.etab.identity')
                 @include('direction.settings.etab.logos')
+                @include('direction.settings.etab.sign')
+                @include('direction.settings.etab.cachet')
+                @include('direction.settings.etab.calendar')
+                @include('direction.settings.etab.day')
+                @include('direction.settings.etab.food')
+                @include('direction.settings.etab.pauses')
+                @include('direction.settings.etab.times')
+                @include('direction.settings.etab.period')
+                @include('direction.settings.etab.sites')
             </div>
             <div
                 class="flex items-center text-right justify-end px-4 py-3 bg-white dark:bg-gray-700 sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
@@ -95,7 +104,7 @@ Gestion établissement
                     class="mr-3 inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-white border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-900 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-100 active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:border-gray-900 dark:focus:border-gray-50 focus:ring focus:ring-gray-300 dark:focus:ring-gray-700 disabled:opacity-25 transition">
                     Retour
                 </a>
-                <button
+                <button id="submit" form="identity" type="submit"
                     class="inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-white border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-900 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-gray-100 active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:border-gray-900 dark:focus:border-gray-50 focus:ring focus:ring-gray-300 dark:focus:ring-gray-700 disabled:opacity-25 transition">
                     Sauvegarder
                 </button>
@@ -103,17 +112,17 @@ Gestion établissement
         </div>
     </div>
 </div>
+@endsection
 
+@section('footer')
 <script>
     function openTab(evt, tabName) {
-
         var i, tabcontent, tablinks;
+        var submit = document.getElementById("submit");
 
         tabcontent = document.getElementsByClassName("tabcontent");
-        console.log(tabcontent);
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
-            console.log(tabcontent[i]);
         }
 
         tablinks = document.getElementsByClassName("tablinks");
@@ -126,6 +135,7 @@ Gestion établissement
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className +=
             " border-b-2 text-purple-500 border-purple-500 dark:text-purple-400 dark:border-purple-400";
+        submit.setAttribute("form", tabName);
     }
 </script>
 @endsection

@@ -9,6 +9,6 @@ class SettingsController extends Controller
 {
     public function show()
     {
-        return view('direction.settings.show', ['page_name' => 'Paramètres', 'evaluation' => true, 'infirmary' => true]);
+        return view('direction.settings.show', ['page_name' => 'Paramètres', 'evaluation' => true, 'infirmary' => true, 'cdi' => true]);
     }
 }
