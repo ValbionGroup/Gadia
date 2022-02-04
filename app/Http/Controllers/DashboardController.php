@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\EleveSituationController;
+use App\Http\Controllers\Eleve\SituationController;
 use App\Http\Controllers\EdtController;
 
 class DashboardController extends Controller
 {
-    public function show(Request $request, EleveSituationController $situation, EdtController $edt_control)
+    public function show(Request $request, SituationController $situation, EdtController $edt_control)
     {
         $situation = $situation->is_regu($request->user()->login);
         $spacetype = "Élève";
@@ -25,7 +25,8 @@ class DashboardController extends Controller
         $cta_vs = null;
         $cta_poll = null;
         $cta_vote = null;
-        $cta_edt = $edt_control->getModifiedCourses($request->user()->login);
+        $cta_alert = false;
+        $cta_edt = $edt_control->getModifiedCourses2d($request->user()->login);
 
         if ($moyenne == null) {
             $moyenne = 'Aucune';
@@ -50,7 +51,8 @@ class DashboardController extends Controller
             'cta_infos' => $cta_info,
             'cta_polls' => $cta_poll,
             'cta_votes' => $cta_vote,
-            'cta_edt' => $cta_edt
+            'cta_edt' => $cta_edt,
+            'cta_alert' => $cta_alert
         ]);
     }
 }
