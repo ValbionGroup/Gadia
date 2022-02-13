@@ -65,7 +65,7 @@ Pour contribuer au projet veuillez suivres les étapes dessous...
 2. Modifier le fichier `.env.example` puis renomer-le en `.env`
 3. Ensuite faites les commandes ci-dessous :
 ```
-composer intall
+composer install
 npm install
 php artisan migrate
 php artisan serve
