@@ -3,7 +3,6 @@
 /public/storage
 /storage/*.key
 /vendor
-/public/assets/css/tailwind.output.css
 .env
 .env.backup
 .phpunit.result.cache
@@ -14,3 +13,4 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+public/mix-manifest.json

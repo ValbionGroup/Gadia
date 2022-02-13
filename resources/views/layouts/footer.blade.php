@@ -12,33 +12,32 @@
       }
     });
 </script>
+<script>
+  const rightClickableArea = document.querySelector('body');
 
-  <script>
-    const rightClickableArea = document.querySelector('body');
+  const instance = tippy(rightClickableArea, {
+    content: 'Gadia - Clique droit non autorisé',
+    placement: 'right-start',
+    trigger: 'manual',
+    interactive: true,
+    arrow: false,
+    offset: [0, 0],
+  });
 
-    const instance = tippy(rightClickableArea, {
-      content: 'Gadia - Clique droit non autorisé',
-      placement: 'right-start',
-      trigger: 'manual',
-      interactive: true,
-      arrow: false,
-      offset: [0, 0],
+  rightClickableArea.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+
+    instance.setProps({
+      getReferenceClientRect: () => ({
+        width: 0,
+        height: 0,
+        top: event.clientY,
+        bottom: event.clientY,
+        left: event.clientX,
+        right: event.clientX,
+      }),
     });
 
-    rightClickableArea.addEventListener('contextmenu', (event) => {
-      event.preventDefault();
-
-      instance.setProps({
-        getReferenceClientRect: () => ({
-          width: 0,
-          height: 0,
-          top: event.clientY,
-          bottom: event.clientY,
-          left: event.clientX,
-          right: event.clientX,
-        }),
-      });
-
-      instance.show();
-    });
-  </script>
+    instance.show();
+  });
+</script>

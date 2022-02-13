@@ -55,7 +55,7 @@ class AuthenticatedSessionController extends Controller
 
             $request->session()->regenerateToken();
 
-            return view('auth.locked', ['space' => $space]);
+            return response()->view('errors.space-locked', ['space' => $space], 403);
         }
     }
 

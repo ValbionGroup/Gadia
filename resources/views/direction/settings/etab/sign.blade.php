@@ -68,7 +68,7 @@
                 <label class="font-medium text-sm text-gray-700 dark:text-gray-400">Prévisualisation</label>
                 <div class="flex flex-col justify-center items-center">
                     @if (count($signatures) > 0)
-                        <img class="object-center mt-1 rounded-lg h-24 border dark:border-gray-600 border-gray-200" id="img" width="350" src="{{ asset('assets/img/signature/'.$signatures[0]->location) }}">
+                        <img class="object-center mt-1 rounded-lg h-24 border dark:border-gray-600 border-gray-200" id="img" width="350" src="{{ asset('img/signature/'.$signatures[0]->location) }}">
                     @else
                         <p class="text-center text-gray-500 dark:text-gray-300">Aucune prévisualisation</p>
                     @endif
@@ -81,6 +81,6 @@
     function displaySign(evt, location) {
         var img = document.getElementById("img");
 
-        img.src = "{{ asset('assets/img/signature/') }}/" + location;
+        img.src = "{{ asset('img/signature/') }}/" + location;
     }
 </script>

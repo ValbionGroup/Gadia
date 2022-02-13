@@ -77,6 +77,9 @@ Gestion des options de Gadia
                 </div>
                 {{-- @include() --}}
                 @include('direction.settings.gadia.licence')
+                <span>
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </span>
             </div>
             <div
                 class="flex items-center text-right justify-end px-4 py-3 bg-white dark:bg-gray-700 sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">

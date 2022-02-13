@@ -122,9 +122,9 @@ class EtablissementController extends Controller
             $file = $request->file('logo');
             $filename_ext = $file->getClientOriginalName();
             $filename = pathinfo($filename_ext, PATHINFO_FILENAME) . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('/assets/img/logo/'), $filename);
+            $file->move(public_path('/img/logo/'), $filename);
             if ($logo != 'default.jpg') {
-                unlink(public_path('/assets/img/logo/' . $logo));
+                unlink(public_path('/img/logo/' . $logo));
             }
             DB::table('settings')->where('NAME', 'logoEtab')->update(['VALUE' => $filename]);
             return redirect()->back()->with("success", "Le logo est correctement enregistré !");
@@ -145,7 +145,7 @@ class EtablissementController extends Controller
             foreach ($request->allFiles('signs') as $file) {
                 $filename_ext = $file->getClientOriginalName();
                 $filename = pathinfo($filename_ext, PATHINFO_FILENAME) . '.' . $file->getClientOriginalExtension();
-                $file->move(public_path('/assets/img/signature/'), $filename);
+                $file->move(public_path('/img/signature/'), $filename);
                 DB::table('signs')->insert(['name' => pathinfo($filename_ext, PATHINFO_FILENAME), 'location' => $filename]);
             }
             return redirect()->back()->with("success", "Les signatures sont correctement enregistrés !");
@@ -157,7 +157,7 @@ class EtablissementController extends Controller
     public function deleteSignature($id)
     {
         $location = DB::table('signs')->where('id', $id)->value('location');
-        unlink(public_path('/assets/img/signature/' . $location));
+        unlink(public_path('/img/signature/' . $location));
         DB::table('signs')->where('id', $id)->delete();
         return redirect()->back()->with("success", "La signature " . $id . " a bien été supprimée !");
     }
@@ -175,9 +175,9 @@ class EtablissementController extends Controller
             $file = $request->file('cachet');
             $filename = 'cachet.' . $file->getClientOriginalExtension();
             if ($cachet != null) {
-                unlink(public_path('/assets/img/signature/' . $cachet));
+                unlink(public_path('/img/signature/' . $cachet));
             }
-            $file->move(public_path('/assets/img/signature/'), $filename);
+            $file->move(public_path('/img/signature/'), $filename);
             DB::table('settings')->where('NAME', 'cachet')->update(['VALUE' => $filename]);
             return redirect()->back()->with("success", "Le cachet est correctement enregistré !");
         } else {

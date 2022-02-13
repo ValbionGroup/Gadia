@@ -26,7 +26,7 @@
             <div class="justify-center">
                 <label class="font-medium text-sm text-gray-700 dark:text-gray-400">Logo présent actuellement</label>
                 <div class="flex flex-col justify-center items-center">
-                    <img class="object-center mt-1 rounded-md" width="350" height="350" src="{{ asset('assets/img/logo/'.$logo) }}">
+                    <img class="object-center mt-1 rounded-md" width="350" height="350" src="{{ asset('img/logo/'.$logo) }}">
                 </div>
             </div>
         </div>

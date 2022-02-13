@@ -28,7 +28,7 @@
                 <label class="font-medium text-sm text-gray-700 dark:text-gray-400">Cachet présent actuellement</label>
                 <div class="flex flex-col justify-center items-center">
                     @if ($cachet != null)
-                        <img class="object-center mt-1 rounded-lg h-80" width="320" src="{{ asset('assets/img/signature/'.$cachet) }}">
+                        <img class="object-center mt-1 rounded-lg h-80" width="320" src="{{ asset('img/signature/'.$cachet) }}">
                     @else
                         <p class="text-center text-gray-500 dark:text-gray-300">Aucun cachet importé</p>
                     @endif
