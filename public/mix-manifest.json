@@ -1,9 +1,9 @@
 {
-    "/js/app.js": "/js/app.js?id=12a6d720bd969c1dcfb1",
-    "/css/loading.css": "/css/loading.css?id=68b329da9893e34099c7",
-    "/css/flash.css": "/css/flash.css?id=42b6e717cc3390f836ed",
-    "/css/custom.css": "/css/custom.css?id=a86187f07fec0b4302a0",
-    "/css/main.css": "/css/main.css?id=53b6edd4fa3fd495bd2f",
-    "/js/init-alpine.js": "/js/init-alpine.js?id=5f07e8e0d62a65f471a9",
-    "/js/focus-trap.js": "/js/focus-trap.js?id=88cc74d732b5460c8028"
+    "/js/app.js": "/js/app.js",
+    "/css/loading.css": "/css/loading.css",
+    "/css/flash.css": "/css/flash.css",
+    "/css/custom.css": "/css/custom.css",
+    "/css/main.css": "/css/main.css",
+    "/js/init-alpine.js": "/js/init-alpine.js",
+    "/js/focus-trap.js": "/js/focus-trap.js"
 }

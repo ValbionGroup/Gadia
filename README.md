@@ -64,7 +64,7 @@ Pour contribuer au projet veuillez suivres les étapes dessous...
 1. Cloner le répo'
 2. Modifier le fichier `.env.example` puis renomer-le en `.env`
 3. Ensuite faites les commandes ci-dessous :
-```
+```bash
 composer install
 npm install
 npm run prod # Si en production

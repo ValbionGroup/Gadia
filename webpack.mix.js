@@ -20,6 +20,9 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/loading.css', 'public/css')
     .sass('resources/sass/main.scss', 'public/css')
     .options({
-        postCss: [ tailwindcss('./tailwind.config.js') ],
+        postCss: [ require('tailwindcss'), tailwindcss('./tailwind.config.js') ],
     })
-    .version();
+
+if (mix.inProduction()) {
+    mix.version();
+}
