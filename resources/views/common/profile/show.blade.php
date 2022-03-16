@@ -49,7 +49,7 @@
             </div>
 
             <div class="mt-10 sm:mt-0">
-                {{-- @include('common.profile.api-token-manager') --}}
+                @include('common.profile.api-token-manager')
             </div>
 
         </div>

@@ -8,6 +8,10 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Jenssegers\Agent\Agent;
 
+use App\Http\Controllers\ApiTokenController;
+
+use Laravel\Sanctum\Sanctum;
+
 class UserProfileController extends Controller
 {
     /**
@@ -16,10 +20,12 @@ class UserProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\View\View
      */
-    public function show(Request $request)
+    public function show(Request $request, ApiTokenController $apiTokens)
     {
         $schoolname = DB::table('settings')->where('NAME', 'schoolName')->value('VALUE');
         $typedim = DB::table('settings')->where('NAME', 'typeDim')->value('VALUE');
+
+        $tokens = $apiTokens->index($request);
 
         return view('common.profile.show', [
             'request' => $request,
@@ -27,7 +33,8 @@ class UserProfileController extends Controller
             'tel' => null,
             'sessions' => $this->sessions($request)->all(),
             'etabName' => $schoolname,
-            'etabType' => $typedim
+            'etabType' => $typedim,
+            'tokens' => $tokens,
         ]);
     }
 

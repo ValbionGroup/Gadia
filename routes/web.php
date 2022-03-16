@@ -29,6 +29,15 @@ Route::get('/', function () {
 // Voir /auth.php
 require __DIR__.'/auth.php';
 
+Route::get('/offline', function() {
+    return view('errors.no-connection', [
+        'etabType' => 'Lycée',
+        'etabName' => 'Victor Duruy',
+        'page_name' => 'Pas de connexion internet',
+        'message' => 'Vous n\'êtes pas connecté à internet. Veuillez vérifier votre connexion internet et réessayer.'
+    ]);
+})->name('offline');
+
 // Need login
 Route::middleware('auth', '2fa')->group(function () {
     // Route : SYSTEME
@@ -40,7 +49,9 @@ Route::middleware('auth', '2fa')->group(function () {
     // Profil et API
     Route::middleware('password.confirm')->group(function () {
         Route::get('/account', [UserProfileController::class, 'show'])->name('profile');
-        Route::get('/api-tokens', [ApiTokenController::class, 'index'])->name('api-tokens');
+
+        Route::post('/api-tokens/store', [ApiTokenController::class, 'store'])->name('api-tokens.store');
+        Route::post('/api-tokens/destroy', [ApiTokenController::class, 'destroy'])->name('api-tokens.destroy');
 
         require __DIR__.'/account.php';
     });

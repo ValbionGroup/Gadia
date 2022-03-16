@@ -14,6 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+    Route::get('/debug', function () {
+        return ['message' => 'Welcome to your new sanctum protected API'];
+    });
+});
+
+Route::get('/infos', function () {
+    return [
+        'status' => 'dev',
+        'version' => '1.0.0',
+        'build' => '1',
+        'etablisement' => [
+            'type' => 'Lycée',
+            'name' => 'Victor Duruy',
+            'address' => '1 rue de la République, 75010 Paris',
+            'country' => 'France',
+            'phone' => ''
+        ],
+        'application' => [
+            'name' => 'GADIA',
+            'owner' => 'VALBION',
+            'url' => 'https://0400017b.gadia.io/',
+        ]
+    ];
 });
