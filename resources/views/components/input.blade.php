@@ -1,0 +1,1 @@
+<input {!! $attributes->merge(['class' => 'form-input-text rounded block w-full mt-1 text-sm dark:border-gray-600 border-gray-300 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray transition disabled:bg-gray-200 disabled:dark:bg-gray-600 dark:bg-gray-800 disabled:cursor-no-drop']) !!}>

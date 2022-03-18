@@ -1,0 +1,1 @@
+<input type="checkbox" {!! $attributes->merge(['class' => 'form-check-input appearance-none rounded h-4 w-4 transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer border-gray-300 bg-white checked:bg-purple-600 checked:border-purple-600 focus:outline-none disabled:cursor-no-drop']) !!}>
