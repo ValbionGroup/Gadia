@@ -1,6 +1,6 @@
 <?php $page_name = 'Connexion'; ?>
 <!DOCTYPE html>
-<html :class="{ 'theme-dark': dark }" x-data="data()" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html :class="{ 'dark': dark }" x-data="data()" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 @include('layouts.head')
 
@@ -30,16 +30,11 @@
 
                             <label class="block text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Utilisateur</span>
-                                <input
-                                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                    placeholder="doejane" name="login" :value="old('login')" required autofocus />
+                                <x-input placeholder="doejane" type="text" name="login" :value="old('login')" required autofocus />
                             </label>
                             <label class="block mt-4 text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Mot de passe</span>
-                                <input
-                                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                    placeholder="***************" type="password" name="password" required
-                                    autocomplete="current-password" />
+                                <x-input placeholder="***************" type="password" name="password" required autocomplete="current-password" />
                             </label>
 
                             <button

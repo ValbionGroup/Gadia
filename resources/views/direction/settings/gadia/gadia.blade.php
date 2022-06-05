@@ -42,44 +42,37 @@ Gestion des options de Gadia
                 @endif
 
                 <div class="flex flex-col sm:flex-row mb-4 text-gray-600 dark:text-gray-300">
-                    <button onclick="openTab(event, 'login')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block border-b-2 text-purple-500 border-purple-500 dark:text-purple-400 dark:border-purple-400 focus:outline-none py-2 px-4">
+                    <x-setting-tab tab="login" class="border-b-2 text-purple-500 border-purple-500 dark:text-purple-400 dark:border-purple-400">
                         Connexion
-                    </button>
-                    <button onclick="openTab(event, 'autorisations')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="autorisations">
                         Autorisations
-                    </button>
-                    <button onclick="openTab(event, 'auth')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="auth">
                         Authentification
-                    </button>
-                    <button onclick="openTab(event, 'securite')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="securite">
                         Sécurité
-                    </button>
-                    <button id="fonctionnalites" onclick="openTab(event, 'fonctionnalites')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="fonctionnalites">
                         Fonctionnalités
-                    </button>
-                    <button onclick="openTab(event, 'licence')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="licence">
                         Licence
-                    </button>
-                    <button onclick="openTab(event, 'api')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="api">
                         API
-                    </button>
-                    <button onclick="openTab(event, 'modules')"
-                        class="text-sm uppercase font-light flex-1 tablinks inline-block hover:text-purple-500 dark:hover:text-purple-400 focus:outline-none py-2 px-4">
+                    </x-setting-tab>
+                    <x-setting-tab tab="modules">
                         Modules
-                    </button>
+                    </x-setting-tab>
+                    <x-setting-tab tab="version">
+                        Version
+                    </x-setting-tab>
                 </div>
                 {{-- @include() --}}
                 @include('direction.settings.gadia.licence')
-                <span>
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                </span>
+                @include('direction.settings.gadia.version')
             </div>
             <div
                 class="flex items-center text-right justify-end px-4 py-3 bg-white dark:bg-gray-700 sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">

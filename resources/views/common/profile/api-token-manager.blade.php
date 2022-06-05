@@ -15,27 +15,8 @@
         <form method="POST" action="{{ route('api-tokens.store') }}">
             @csrf
             <div class="px-4 py-5 bg-white dark:bg-gray-700 sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
-                @if ($errors->any())
-                <div
-                    class="p-2 mb-3 flex items-center justify-between text-sm font-semibold dark:text-red-100 dark:bg-red-600 text-red-600 bg-red-100 rounded-lg shadow-md focus:outline-none focus:shadow-outline-red">
-                    <div class="flex items-center">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <span>
-                            Quelques erreurs sont survenues :
-                            <ul class="list-disc list-inside text-sm dark:text-red-100 text-red-600">
-                                @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </span>
-                    </div>
-                </div>
-                @endif
+
+                <x-auth-validation-errors />
 
 
                 <div class="grid grid-cols-6 gap-6">
@@ -44,9 +25,7 @@
                         <label class="block text-sm mb-2" for="tokenName">
                             <span
                                 class="font-medium text-sm text-gray-700 dark:text-gray-400">Nom du jeton</span>
-                            <input
-                                class="block w-full mt-1 text-sm border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                name="tokenName" id="tokenName" type="text" required>
+                            <x-input name="tokenName" id="tokenName" type="text" required />
                         </label>
                     </div>
                 </div>
@@ -97,15 +76,15 @@
                         {{ $token["name"] }}
                     </div>
 
-                    <div class="flex items-center">
+                    <div class="items-center flex">
                         @if ($token["last_used_at"])
-                        <div class="text-sm text-gray-600 dark:text-gray-500 tooltip" data-title="{{ date('d/m/Y \à H:i', strtotime($token["last_used_at"])) }}">
+                        <div class="hidden sm:block text-sm text-gray-600 dark:text-gray-500 tooltip" data-title="{{ date('d/m/Y \à H:i', strtotime($token["last_used_at"])) }}">
                             Dernière utilisation {{ $token["last_used_ago"] }}
                         </div>
                         @endif
 
                         <button class="cursor-pointer ml-6 text-sm text-red-500"
-                            click="confirmApiTokenDeletion({{ $token["id"] }})">
+                            click="confirmApiTokenDeletion({{ $token["id"] }})" @click="displayingToken = true">
                             Supprimer
                         </button>
                     </div>
@@ -118,47 +97,44 @@
 </div>
 @endif
 
-<!-- Token Value Modal -->
 <x-dialog-modal model="displayingToken">
     <x-slot name="title">
-        {{ __('API Token') }}
+        Jeton d'API
     </x-slot>
 
     <x-slot name="content">
         <div>
-            {{ __('Please copy your new API token. For your security, it won\'t be shown again.') }}
+            Veuillez copier votre nouveau jeton API. Pour votre sécurité, il ne sera plus affiché.
         </div>
 
-        <input id="plaintextToken" type="text" readonly value="$plainTextToken"
-            class="mt-4 bg-gray-100 px-4 py-2 rounded font-mono text-sm text-gray-500 w-full" autofocus autocomplete="off"
+        <x-input disabled id="plaintextToken" type="text" readonly value="$plainTextToken" autofocus autocomplete="off"
             autocorrect="off" autocapitalize="off" spellcheck="false"
             @showing-token-modal.window="setTimeout(() => $refs.plaintextToken.select(), 250)" />
     </x-slot>
 
     <x-slot name="footer">
-        <button wire:click="$set('displayingToken', false)" wire:loading.attr="disabled">
-            {{ __('Close') }}
+        <button @click="$set('displayingToken', false)" loading.attr="disabled">
+            Fermer
         </button>
     </x-slot>
 </x-dialog-modal>
 
-<!-- Delete Token Confirmation Modal -->
 <x-confirmation-modal model="confirmingApiTokenDeletion">
     <x-slot name="title">
-        {{ __('Delete API Token') }}
+        Supprimer un jeton d'API
     </x-slot>
 
     <x-slot name="content">
-        {{ __('Are you sure you would like to delete this API token?') }}
+        Êtes-vous sûr de vouloir supprimer ce jeton d'API ?
     </x-slot>
 
     <x-slot name="footer">
         <button wire:click="$toggle('confirmingApiTokenDeletion')" wire:loading.attr="disabled">
-            {{ __('Cancel') }}
+            Annuler
         </button>
 
         <button class="ml-2" wire:click="deleteApiToken" wire:loading.attr="disabled">
-            {{ __('Delete') }}
+            Supprimer
         </button>
     </x-slot>
 </x-confirmation-modal>
