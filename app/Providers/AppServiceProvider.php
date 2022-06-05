@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use \Spatie\LaravelIgnition\Facades\Flare;
+use \Spinen\Version\Version as Version;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        Flare::determineVersionUsing(function() {
+            return "0.0.1"; // return your version number
+        });
     }
 }
