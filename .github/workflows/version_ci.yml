@@ -25,20 +25,17 @@ jobs:
           echo "build:${{ github.run_id }}" >> VERSION
           date +"%Y%m%d%k%M%S%z" >> VERSION
 
-      - name: Switching from HTTPS to SSH
-        run: git remote set-url origin ${{ secrets.ssh }}
-
-      - name: check for changes
+      - name: Check for changes
         run: git status
 
-      - name: stage changed files
+      - name: Stage changed files
         run: git add .
 
-      - name: commit changed files
+      - name: cCommit changed files
         run: git commit -m "Auto updating VERSION"
 
-      - name: fetch from master
+      - name: Fetch from master
         run: git fetch origin master
 
-      - name: push code to master
+      - name: Push code to master
         run: git push origin HEAD:master
