@@ -1,14 +1,17 @@
 name: Fill Version infos
 
 on:
+  push:
+    branches:
+      - master
   release:
     types:
-      - created
+      - published
 
   workflow_dispatch:
 
 jobs:
-  setVer:
+  fillVersion:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,3 +24,21 @@ jobs:
           echo "sha:${{ github.sha }}" >> VERSION
           echo "build:${{ github.run_id }}" >> VERSION
           date +"%Y%m%d%k%M%S%z" >> VERSION
+
+      - name: Switching from HTTPS to SSH
+        run: git remote set-url origin ${{ secrets.ssh }}
+
+      - name: check for changes
+        run: git status
+
+      - name: stage changed files
+        run: git add .
+
+      - name: commit changed files
+        run: git commit -m "Auto updating VERSION"
+
+      - name: fetch from master
+        run: git fetch origin master
+
+      - name: push code to master
+        run: git push origin HEAD:master
