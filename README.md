@@ -5,7 +5,8 @@
 </p>
 <p align="center">
     <a href="http://discord.gadia.valbion.com"><img alt="Discord" src="https://img.shields.io/discord/861887344482844672?color=5865F2&label=Rejoignez%20notre%20Discord&logo=discord&logoColor=fff&style=for-the-badge"></a><br/>
-  <img src="https://img.shields.io/github/v/release/ValbionGroup/Gadia?label=Version&color=Green&style=for-the-badge" alt="Release"><br/>
+  <img src="https://img.shields.io/github/v/release/ValbionGroup/Gadia?label=Version&color=Green&style=for-the-badge" alt="Release">
+  <img src="https://img.shields.io/github/workflow/status/ValbionGroup/Gadia/Build?label=Build&style=for-the-badge" alt="Build"><br/>
   <img src="https://img.shields.io/github/issues/ValbionGroup/Gadia?style=flat-square" alt="Issue">
   <img src="https://img.shields.io/github/stars/ValbionGroup/Gadia?color=dark%20green&style=flat-square" alt="Stars">
   <img src="https://img.shields.io/github/sponsors/ValbionGroup?style=flat-square" alt="Sponsors">
